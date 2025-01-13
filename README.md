@@ -33,15 +33,23 @@ The dataset used in this analysis is the ifood_df.csv, which contains customer i
 
 The dataset is cleaned and features are standardized using StandardScaler for efficient clustering.
 
-### Clustering:
+### Clustering (Elbow Method):
 
 KMeans clustering with k=4 clusters is applied to identify customer segments based on the provided features. This number of clusters was selected after analyzing the dataset and evaluating different clustering methods.
+
+![image](https://github.com/user-attachments/assets/c017f7a2-f7a6-442c-936a-22dd42406286)
+
 
 ### Visualization:
 
 - Scatter Plot: A scatter plot of Income vs. MntTotal is created to visualize customer segments based on income and total spending.
 
+![image](https://github.com/user-attachments/assets/d9740c82-0d7d-4555-a5a6-0289caa30f17)
+
 - Bar Chart: A bar chart is created to show the average total spending for each customer cluster.
+
+![image](https://github.com/user-attachments/assets/2dd0feb2-990b-4583-b86d-c546042b987e)
+
 
 ## Insights and Recommendations from Analysis
 
