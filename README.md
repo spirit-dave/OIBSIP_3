@@ -1,66 +1,112 @@
 # Customer Segmentation Analysis
 
-This repository contains the complete workflow for performing customer segmentation using clustering algorithms, with a focus on understanding purchase behavior and customer engagement patterns.
+## Overview
 
-## Learning Objectives
+This project performs customer segmentation on an e-commerce dataset, specifically focusing on customer spending behaviors and demographics. The goal of the analysis is to identify distinct customer segments using unsupervised machine learning, specifically KMeans clustering.
 
-This analysis aimed to develop skills in the following areas:
+## Dataset
 
-- Clustering Algorithms: Practical experience in implementing K-Means clustering and interpreting results.
+The dataset used in this analysis is the ifood_df.csv, which contains customer information such as:
 
-- Data Cleaning and Exploration: Advanced techniques to handle raw datasets effectively.
+- Income: Customer's annual income
 
-- Visualization Techniques: Effective use of plots and charts to communicate findings and insights.
+- Kidhome: Number of children in the household
 
-## Key Concepts and Challenges
+- Teenhome: Number of teenagers in the household
 
-1. Data Collection
+- Recency: Number of days since the customer's last purchase
 
-Obtained a dataset (ifood_df.csv) containing customer demographic information, purchase history, and engagement metrics.
+- MntTotal: Total spending of the customer
 
-Ensured that the dataset included features such as income, spending patterns, and purchase frequency.
+- NumWebPurchases: Number of purchases made through the website
 
-2. Data Exploration and Cleaning
+- NumCatalogPurchases: Number of purchases made through catalogs
 
-Exploration: Conducted an in-depth analysis of the dataset structure, distributions, and correlations.
+- NumStorePurchases: Number of purchases made in stores
 
-Cleaning: Addressed issues like missing values and inconsistencies to ensure reliable data quality.
+- NumWebVisitsMonth: Number of visits to the website per month
 
-3. Descriptive Statistics
+- Age: Customer's age
 
-Calculated key metrics such as: 
+## Analysis Workflow
+### Data Preprocessing:
 
-Average purchase value
+The dataset is cleaned and features are standardized using StandardScaler for efficient clustering.
 
-Frequency of purchases
+### Clustering:
 
-Total spending across categories (e.g., wines, fruits, meats)
+KMeans clustering with k=4 clusters is applied to identify customer segments based on the provided features. This number of clusters was selected after analyzing the dataset and evaluating different clustering methods.
 
-Provided initial insights into overall customer behavior.
+### Visualization:
 
-4. Customer Segmentation
+- Scatter Plot: A scatter plot of Income vs. MntTotal is created to visualize customer segments based on income and total spending.
 
-Applied the K-Means Clustering algorithm to group customers into distinct segments based on their behavior.
+- Bar Chart: A bar chart is created to show the average total spending for each customer cluster.
 
-Used the Elbow Method to determine the optimal number of clusters, ensuring meaningful and interpretable results.
+## Insights and Recommendations from Analysis
 
-## Visualization
-- Scatter Plots: Displaying spending versus engagement patterns for clusters.
+- Cluster 0: Budget-Conscious Shoppers
 
-- Bar Charts: Comparing key metrics like income, spending, and web visits across segments.
+- Income: Likely to have low to mid-range income.
 
-## Insights and Recommendations
+- Kidhome/Teenhome: May have fewer children or teenagers, suggesting they might not be shopping for large family needs.
 
-Analyzed the characteristics of each segment to identify key traits and behaviors.
+- MntTotal: Lower average spending compared to other clusters.
 
-Provided actionable recommendations to improve marketing strategies, such as: 
+- Recency: These customers might not shop frequently.
 
-Personalizing promotions for high-value segments.
+- Purchases: Likely to make more store and catalog purchases rather than web-based purchases.
 
-Increasing engagement through targeted campaigns for less active groups.
+### Insight
+This segment consists of customers with lower spending power who prefer traditional shopping methods. They may look for budget-friendly products and promotions.
 
-- High-Value Customers: Identified segments with high spending across multiple categories, suggesting tailored loyalty programs and exclusive offers.
+## Cluster 1: High-Spending, Frequent Shoppers
 
-- Engagement Opportunities: Highlighted low-engagement segments that could benefit from targeted campaigns to increase web visits and purchases.
+- Income: High income levels, suggesting they are more financially stable or affluent.
 
-- Product Preferences: Detailed the preferences of each cluster, enabling more effective product-specific promotions.
+- MntTotal: High total spending, which is consistent with their higher income.
+
+- Recency: These customers shop more frequently, suggesting that they are active and loyal customers.
+
+- Purchases: Likely to make purchases both online and in stores, possibly favoring online for convenience.
+
+- Insight: This segment represents high-value customers who make frequent purchases and spend a lot. Targeting them with premium products or loyalty rewards would be effective.
+
+## Cluster 2: Middle-Aged Parents with Moderate Spending
+
+- Income: Mid-range income.
+
+- Kidhome/Teenhome: Likely to have children, both younger and teenagers.
+
+- MntTotal: Moderate spending compared to other clusters.
+
+- Purchases: Tend to shop both online and in stores, though their total spending may not be as high as Cluster 1.
+
+### Insight 
+These customers may be looking for family-oriented products. They may value convenience but also consider product quality. Offering family bundles or discounts might appeal to them.
+
+## Cluster 3: Younger Shoppers with Moderate to Low Spending
+
+- Income: Lower to moderate income.
+
+- Age: Typically younger customers.
+
+- MntTotal: Lower spending compared to other clusters.
+
+- Recency: May shop infrequently, possibly due to lower disposable income or shifting priorities.
+
+- Purchases: Likely to make more online purchases, driven by ease and discounts.
+
+### Insight 
+This segment could represent students or early-career individuals. Targeting them with affordable, trendy, or tech-related products could be effective. Discounts and promotional offers may attract them to shop more often.
+
+## Marketing Strategy Based on Insights
+
+- Cluster 0 (Budget-Conscious Shoppers): Focus on offering discounts, bundle deals, and promotions that highlight affordability. Traditional marketing channels (catalogs, in-store events) may resonate more with them.
+
+- Cluster 1 (High-Spending, Frequent Shoppers): Personalize marketing to make them feel valued. Offer loyalty programs, exclusive product launches, and personalized shopping experiences. This group could benefit from VIP memberships and early access to sales.
+
+- Cluster 2 (Middle-Aged Parents): Highlight family-oriented products. Offer bundles, seasonal promotions, and items catering to children's needs. Advertise through both online and offline channels, focusing on product quality and convenience.
+
+- Cluster 3 (Younger Shoppers): Engage with this group using online channels (social media, digital ads) and emphasize trendy, affordable products. Offer student discounts and limited-time offers to encourage more frequent purchases.
+
